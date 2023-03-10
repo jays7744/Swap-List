@@ -55,17 +55,19 @@ input{ font-size: 17px;
     }
     #bt1{
         font-size: 10px;
-        padding: 10px;
+        padding: 5px;
+        color: black;
     }
     input{
-        width: 200px;
+        width: 180px;
         font-size: 12px;
         padding: 0px;
 
     }
     #bt2{
         font-size: 10px;
-        padding: 10px;
+        padding: 5px;
+        color: black;
         
 
     }
