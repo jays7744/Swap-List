@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap list</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h1>Swap List</h1>
+    
+    <div class="center">
+        <input type="text" placeholder="Enter Input here" id="input">
+        <button id="bt1">Add To A</button>
+        <button id="bt2">Add To B</button>
+    </div>
+    <div class="main">
+
+        <div class="a">
+            <h2>Column A</h2>
+            <div id="A">
+                <p>Pizza</p>
+                <p>Sandwich</p>
+                <p>Hamburger</p>
+                <p>Apple Juice</p>
+                <p>Grape Juice</p>
+
+            </div>
+        </div>
+          <p class="fa fa-exchange" style="color: aliceblue; font-size: 25px; margin-top: 6%;"></p>
+       
+        <div class="b">
+            <h2>Column B</h2>
+            <div id="B">
+                <p>Cookie</p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <p>1. Enter value in input bar and click first button, the input value will be add in column A and the value erase from input bar.</p>
+     <P>2.And click to second Button then the input vlaue will be add in Column B</P>
+     <p>3.Click particular item from any column it will be Swap in to Another Column</p>
+</body>
+
+<script>
+
+    let a = document.getElementById("A");
+    let b = document.getElementById("B");
+    let input = document.getElementById("input");
+    let button= document.getElementById("bt1");
+    let button2 = document.getElementById("bt2");
+ 
+    //  For Column A value swap to B / here i used tagName   
+    a.addEventListener("click", (e) => {
+        E = e.target;
+        if (E.tagName === "P") {
+            b.appendChild(E)
+        }
+    })
+
+    //  For Column B value swap to A / here i used nodeName
+    b.addEventListener("click", (e) => {
+        E = e.target;
+        if (E.nodeName === "P") {
+            a.appendChild(E)
+        }
+    })
+   
+    button.addEventListener("click", ()=>{
+    if(input.value === ""){
+        alert("Please Enter Input");
+    }
+    else{
+    let p = document.createElement("p");
+     p.textContent = input.value;
+    console.log(input.value);
+     a.appendChild(p);
+     input.value = null;
+    }
+    })
+
+    button2.addEventListener("click", ()=>{
+        if(input.value === ""){
+        alert("Please Enter Input");
+    }
+    else{
+    let p = document.createElement("p");
+     p.textContent = input.value;
+    console.log(input.value);
+     b.appendChild(p);
+     input.value = null;
+    }
+    })
+ 
+
+</script>
+
+</html>
